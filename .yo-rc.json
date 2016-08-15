@@ -1,0 +1,9 @@
+{
+  "generator-mocha": {
+    "ui": "tdd",
+    "rjs": false
+  },
+  "generator-angular-require": {
+    "appPath": "app"
+  }
+}
