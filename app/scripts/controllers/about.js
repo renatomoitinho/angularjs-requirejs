@@ -1,6 +1,10 @@
 define(['angular'], function(angular) {
   'use strict';
 
+  function sampleSuccess(data){
+    this.scope.awesomeThings = data.awesomeThings
+  }
+  
   /**
    * @ngdoc function
    * @name projetazzoApp.controller:AboutCtrl
@@ -10,9 +14,8 @@ define(['angular'], function(angular) {
    */
   angular.module('projetazzoApp.controllers.AboutCtrl', [])
     .controller('AboutCtrl', ['$scope', 'MyService', function($scope, myService) {
-      myService.sample().then(function(evt) {
-        $scope.awesomeThings = evt.awesomeThings;
-      });
+      
+      myService.sample().then(sampleSuccess.bind({scope: $scope}));
 
     }]);
 });

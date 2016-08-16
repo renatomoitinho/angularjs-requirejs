@@ -11,13 +11,6 @@ define(['angular'], function(angular) {
   angular.module('projetazzoApp.services.MyService', [])
     .service('MyService', function($resource, $http, $log, $q, $templateCache) {
       // AngularJS will instantiate a singleton by calling "new" on this function
-      // var httpServices = function() {
-      //   return $http({
-      //     method: 'GET',
-      //     url: 'data/:ref.json',
-      //     cache: $templateCache
-      //   });
-      // };
 
       return {
         sample: function() {
@@ -34,9 +27,9 @@ define(['angular'], function(angular) {
               deferred.reject(msg);
               $log.error(msg, code);
             });
+
           return deferred.promise;
         }
-
       };
 
     });
